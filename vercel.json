@@ -1,13 +1,16 @@
 {
     "version": 2,
     "name": "5easier-landing",
+    "public": true,
+    "cleanUrls": true,
+    "rewrites": [
+      { "source": "/", "destination": "/index.html" }
+    ],
     "builds": [
       { "src": "api/*.js", "use": "@vercel/node" }
     ],
     "routes": [
-        { "src": "/api/(.*)", "dest": "/api/$1.js" },
-        { "src": "/", "dest": "/public/index.html" }, 
-        { "src": "/(.*)", "dest": "/public/$1" }
-      ]
+      { "src": "/api/(.*)", "dest": "/api/$1.js" }
+    ]
   }
   
