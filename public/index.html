@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,11 +9,30 @@
   <style>
     @font-face {
       font-family: 'Garet';
-      src: url('Garet-Heavy.otf') format('opentype'); /* You must host the font file */
+      src: url('Garet-Heavy.otf') format('opentype');
+      /* You must host the font file */
       font-weight: bold;
       font-style: normal;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @font-face {
+      font-family: 'Garet-Book';
+      src: url('Garet-Book.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
     body {
       font-family: 'Garet', sans-serif;
       background: #ffffff;
@@ -21,17 +41,20 @@
       display: flex;
       flex-direction: column;
     }
+
     header {
       background-color: #fff;
       color: #00bf63;
       padding: 3rem 2rem 1rem;
       text-align: center;
     }
+
     header h1 {
       font-size: 3rem;
       font-family: 'Garet', sans-serif;
       font-weight: bold;
     }
+
     section.hero {
       padding: 4rem 2rem;
       background-color: #d8e0d6;
@@ -40,6 +63,7 @@
       align-items: center;
       text-align: center;
     }
+
     @media(min-width: 768px) {
       section.hero {
         flex-direction: row;
@@ -47,32 +71,124 @@
         text-align: left;
       }
     }
+
     .hero-text {
       flex: 1;
       padding: 1rem;
+      /* font-family: 'Garet-Book', sans-serif; */
     }
+
     .hero-text h4 {
       font-size: 2rem;
       margin-bottom: 1rem;
       color: #006032;
-      font-family: 'Garet';
-      font-weight: 200;
+      font-family: 'Garet-Book';
+      font-weight: 800;
     }
+
     .hero-image {
       flex: 1;
       padding: 1rem;
       text-align: center;
     }
+
     .hero-image img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
     }
+
+    section.program {
+      background-color: #065f3d;
+      color: #ffffff;
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+    }
+
+    .program h2 {
+      font-size: 1.8rem;
+      margin-top: 2rem;
+      font-family: 'Garet-Heavy', sans-serif;
+      font-weight: 800;
+    }
+
+    .program-visuals {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    @media(min-width: 768px) {
+      .program-visuals {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+
+    .program-visuals img:first-child {
+      width: 200px;
+      height: auto;
+      /* margin-left: 100px;
+      margin-right: 20px; */
+    }
+
+    .program-visuals img:last-child {
+      height: 400px;
+      width: auto;
+      /* margin-right: 100px; */
+    }
+
+    section.features {
+      padding: 3rem 2rem;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @media(min-width: 768px) {
+      section.features {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 2rem;
+      }
+    }
+
+    .feature-box {
+      flex: 1;
+      padding: 2rem;
+      background: #e4eee1;
+      border-radius: 20px;
+      font-size: 1rem;
+      font-family: 'Garet-Book', sans-serif;
+    }
+
+    .feature-box h3 {
+      color: #00b050;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-family: 'Garet-Heavy', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+
+    .feature-box p {
+      margin-bottom: 1rem;
+      font-weight: 400;
+      font-family: 'Garet-Book', sans-serif;
+    }
+
     section.contact {
       padding: 2rem;
       background: #dcfac7;
       text-align: center;
+      flex: 1;
+      font-family: 'Garet-Book', sans-serif;
+      font-weight: 800;
     }
+
     form {
       max-width: 500px;
       margin: 0 auto;
@@ -80,12 +196,15 @@
       flex-direction: column;
       gap: 1rem;
     }
-    input, textarea {
+
+    input,
+    textarea {
       padding: 0.75rem;
       border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 1rem;
     }
+
     button {
       padding: 0.75rem;
       border: none;
@@ -95,6 +214,34 @@
       border-radius: 5px;
       cursor: pointer;
     }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      background-color: #e0e0e0;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      text-decoration: none;
+      color: #004d26;
+      font-weight: bold;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .social-icons img {
+      width: 20px;
+      height: 20px;
+    }
+
     footer {
       background: #000;
       color: #fff;
@@ -104,6 +251,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>5easier</h1>
@@ -111,11 +259,45 @@
 
   <section class="hero">
     <div class="hero-text">
-        <h4>Compliance Management Platform built for Safety Professionals to drive efficiency, mitigate safety risk & empower team.</h4>
-      </div>
-      <div class="hero-image">
-        <img src="/image.png" alt="Compliance Management Dashboard" loading="lazy"/>
-      </div>
+      <h4>Compliance Management Platform built for Safety Professionals to drive efficiency, mitigate safety risk &
+        empower team.</h4>
+    </div>
+    <div class="hero-image">
+      <img src="page2_image.png" alt="Compliance Management Dashboard" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="program">
+    <div class="program-visuals">
+      <img src="page3_image1.png" alt="Mobile App" />
+      <img src="page3_image2.png" alt="Dashboard" />
+    </div>
+    <h2>Digitalize your Safety Program</h2>
+  </section>
+
+  <section class="features">
+    <div class="feature-box">
+      <h3>Safety Managers</h3>
+      <p><strong>Manage</strong> daily safety ops from one smart dashboard.</p>
+      <p><strong>See</strong> key metrics: incidents, overdue tasks, inspection scores, training gaps.</p>
+      <p><strong>Get</strong> Matt’s insights: repeat issues, high-risk gaps, early warnings.</p>
+      <p><strong>Track</strong> team performance and spot who’s ahead or behind.</p>
+      <p><strong>Assign</strong> tasks, review reports, and launch investigations fast.</p>
+      <p><strong>Export</strong> OSHA-ready reports instantly–no spreadsheets.</p>
+      <p><strong>Receive</strong> alerts for missed audits, deadlines, or unresolved risks.</p>
+      <p><strong>Recognize</strong> top teams with engagement trends and gamification.</p>
+      <p><strong>Lead</strong> with confidence. Respond faster. Build a stronger safety culture.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Frontline Workers</h3>
+      <p><strong>Set</strong> up your safety profile during orientation–quick login with your employee ID.</p>
+      <p><strong>Pick</strong> your language, role, and shift to personalize the app.</p>
+      <p><strong>Confirm</strong> daily tasks to get safety tips that match your work.</p>
+      <p><strong>View</strong> your dashboard: training progress, tasks, and safety checklists.</p>
+      <p><strong>Report</strong> hazards instantly–no paperwork.</p>
+      <p><strong>Earn</strong> points for safe actions and proactive behavior (rewards optional).</p>
+      <p><strong>Receive</strong> Matt’s alerts if risks rise in your area always in your language.</p>
+    </div>
   </section>
 
   <section class="contact">
@@ -126,40 +308,28 @@
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
+
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/company/5easier" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
+        LinkedIn
+      </a>
+      <a href="https://substack.com" target="_blank">
+        <img src="substack.png" /> Substack
+      </a>
+      <a href="founder@5easier.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" /> Email
+      </a>
+      <a href="tel:+13202246327">
+        <img src="https://cdn-icons-png.flaticon.com/512/15/15928.png" alt="Phone" /> Phone
+      </a>
+    </div>
   </section>
 
   <footer>
     &copy; 2025. All rights reserved.
   </footer>
   <script>
-    // Smooth scroll
-    // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    //   anchor.addEventListener("click", function (e) {
-    //     e.preventDefault();
-    //     document.querySelector(this.getAttribute("href")).scrollIntoView({
-    //       behavior: "smooth"
-    //     });
-    //   });
-    // });
-
-    // // Mobile nav toggle (if applicable)
-    // const toggle = document.getElementById("mobile-toggle");
-    // const nav = document.getElementById("mobile-menu");
-    // if (toggle && nav) {
-    //   toggle.addEventListener("click", () => {
-    //     nav.classList.toggle("show");
-    //   });
-    // }
-
-    // // Form handler (placeholder)
-    // document.querySelector("form").addEventListener("submit", async function (e) {
-    //   e.preventDefault();
-    //   const formData = new FormData(this);
-    //   const data = Object.fromEntries(formData.entries());
-    //   console.log("Form Submitted:", data);
-    //   alert("Thanks! We'll be in touch.");
-    //   this.reset();
-    // });
     const form = document.querySelector("form");
 
     form.addEventListener("submit", async (e) => {
@@ -186,7 +356,7 @@
 
         if (response.ok) {
           // Send to Zapier webhook
-          const zapierRes = 
+          const zapierRes =
             await fetch("/api/zapier", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -194,10 +364,10 @@
             });
 
           if (!zapierRes.ok) {
-           const text = await zapierRes.text();
-           console.error("Zapier Error:", text);
-           alert("Zapier failed: " + text);
-         }
+            const text = await zapierRes.text();
+            console.error("Zapier Error:", text);
+            alert("Zapier failed: " + text);
+          }
           alert("Thanks! We'll be in touch.");
           form.reset();
         } else {
@@ -210,4 +380,5 @@
     });
   </script>
 </body>
+
 </html>
