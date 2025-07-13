@@ -186,11 +186,12 @@
 
         if (response.ok) {
           // Send to Zapier webhook
-          const zapierRes = await fetch("https://hooks.zapier.com/hooks/catch/23773657/u235gbl/", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-           });
+          const zapierRes = 
+            await fetch("/api/zapier", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload)
+            });
 
           if (!zapierRes.ok) {
            const text = await zapierRes.text();
